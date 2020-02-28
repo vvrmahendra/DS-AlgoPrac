@@ -5,6 +5,8 @@ Created on Fri Feb 28 12:31:23 2020
 @author: mahi
 """
 
+#https://www.interviewbit.com/problems/combinations/
+
 ans = []
 def nck(A,len_,path):
     if len_ == 0:
