@@ -32,7 +32,7 @@ Example Output
 
 
 
-def solve(self, A, B):
+def solve(A, B):
     def customSort(ele):
         i = ele[0]
         j = ele[1]
