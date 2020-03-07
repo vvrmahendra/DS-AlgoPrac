@@ -87,7 +87,7 @@ def solveNQueens(self, A):
     
     
     Arr = []
-    for i in range(A):
+    for _ in range(A):
         Arr.append(['.'for j in range(A)])
         
     nQueens(Arr,0,(0,0),[])
