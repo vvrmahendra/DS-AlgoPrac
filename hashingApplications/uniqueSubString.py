@@ -5,7 +5,7 @@ which the length is 3. For "bbbbb" the longest substring is "b", with the length
 
 
 
-def lengthOfLongestSubstring(self, A):
+def lengthOfLongestSubstring(A):
     n = len(A)
     dict_ = {}
     ans = 0
