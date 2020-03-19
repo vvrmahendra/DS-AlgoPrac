@@ -34,3 +34,22 @@ def anagrams(A):
             index_ += 1
             
     return ans
+
+
+def anagramsV2(A):
+    from collections import defaultdict
+    n = len(A)
+    dict_ = defaultdict(int)
+    ans = []
+    for i in range(n):
+        hash_ = 0
+        for char_ in A[i]:
+            hash_ += ord(char_)**2
+            
+        if hash_ in dict_:    
+            ans[dict_[hash_]].append(i+1)
+        else:
+            ans.append([i+1])
+            dict_[hash_] = len(ans)-1
+            
+    return ans
