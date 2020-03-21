@@ -16,7 +16,7 @@ Output 1:
 Input 2:
     A = "/a/./b/../../c/"
 Output 2:
-    "/c""""
+    "/c"""
 
 def simplifyPath(A):
     stack = []

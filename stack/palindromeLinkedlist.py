@@ -35,7 +35,7 @@ def lPalin(A):
     if A.val != second_head.val:
         return 0
 
-    for i in range((n-1)//2):
+    for _ in range((n-1)//2):
         A, second_head = A.next, second_head.next
         if A.val != second_head.val:
             return 0
