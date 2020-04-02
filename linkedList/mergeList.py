@@ -1,5 +1,5 @@
 from linkedList import ListNode
-
+#saving the original list ans creating new nodes
 def mergeTwoLists( A, B):
     if A == None:
         return B
@@ -40,6 +40,39 @@ def mergeTwoLists( A, B):
         
     return out
 
+
+#with no extra space
+def mergeTwoListsV2(A, B):
+    if not A:
+        return B
+    if not B:
+        return A
+        
+    first = A
+    second = B
+    if first.val < second.val:
+        ans = first
+        first = first.next
+    else:
+        ans = second
+        second = second.next
+    temp = ans    
+    while first and second:
+        if first.val < second.val:
+            temp.next = first
+            first = first.next
+            temp = temp.next
+        else:
+            temp.next = second
+            second = second.next
+            temp = temp.next
+            
+    if first:
+        temp.next = first
+    if second:
+        temp.next = second
+        
+    return ans
 
 if __name__ == "__main__":
     pass
