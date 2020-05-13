@@ -46,3 +46,24 @@ class Solution:
         
         helper(root)
         return max_
+
+# other Solution
+class SolutionV2:
+	# @param A : root node of tree
+	# @return an integer
+	def maxPathSum(self, A):
+        if not A: return 0
+        ans = [float('-inf')]
+        
+        def helper(head):
+            if not head:
+                return 0
+                
+            left = helper(head.left)
+            right = helper(head.right)
+            ans[0] = max(ans[0], left+right+head.val, left+head.val, right+head.val, head.val)
+            
+            return max(left,right)+head.val
+            
+        helper(A)
+        return ans[0]
