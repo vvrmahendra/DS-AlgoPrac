@@ -53,3 +53,40 @@ The path to be followed will be:
 Total length of path = 1 + 1 + 2 = 4.
   Explanation 2:            
  Path will be 0-> 1."""
+
+
+ from collections import defaultdict, deque
+class Solution:
+    # @param A : integer
+    # @param B : list of list of integers
+    # @param C : integer
+    # @param D : integer
+    # @return an integer
+    def solve(self, A, B, C, D):
+        flag = A
+        rays = defaultdict(list)
+        for p, c, w in B:
+            if w == 1:
+                rays[p].append(c)
+                rays[c].append(p)
+            else:
+                rays[p].append(flag)
+                rays[flag].append(p)
+                rays[flag].append(c)
+                rays[c].append(flag)
+                flag += 1
+                
+        visited = set()
+        q = deque()
+        q.append((C,0))
+        while q:
+            cur, dep = q.popleft()
+            if cur == D:
+                return dep
+            visited.add(cur)
+            for nei in rays[cur]:
+                if nei not in visited:
+                    q.append((nei, dep+1))
+                    
+        return -1
+                
