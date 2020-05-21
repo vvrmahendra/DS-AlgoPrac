@@ -1,4 +1,4 @@
-from .binaryNode import BinaryNode as Node
+from binaryNode import BinaryNode as Node
 from collections import deque
 class BT:
     def __init__(self):
