@@ -7,7 +7,7 @@ def permutationWithDuplicates(A):
             return
         
         for i in range(l,r+1):
-            if A[i] not in A[l:i]:
+            if A[i] not in A[l:i]: #Swaping with first unique value
                 A[i],A[l] = A[l],A[i]
                 helper(A, l+1, r)
                 A[i],A[l] = A[l],A[i]
